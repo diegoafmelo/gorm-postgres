@@ -1,0 +1,198 @@
+{
+	"info": {
+		"_postman_id": "8f929f66-db6f-49af-9469-166c5bc2cf7e",
+		"name": "DR-GORM",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16772352"
+	},
+	"item": [
+		{
+			"name": "LIST-ALL",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/subjects",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"subjects"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/subjects/1?load_participant=false",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"subjects",
+						"1"
+					],
+					"query": [
+						{
+							"key": "load_participant",
+							"value": "false"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SAVE",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"PYTHON\",\n    \"description\": \"Resolvendo python\",\n    \"author\": \"Diego Araujo Ferreira de Melo\",\n    \"is_active\": false,\n    \"participants\": [\n        {\n            \"name\": \"Marcos Castro\",\n            \"team\": \"3PL\"\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/subjects",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"subjects"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"GORM for Experts\",\n    \"author\": \"Diego Araujo Ferreira de Melo\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/subjects/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"subjects",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/subjects/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"subjects",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SAVE-WITH-PARTICIPANTS",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"GOLANG for Experts\",\n    \"description\": \"Resolvendo todos os seus problemas com um banco de dados relacional\",\n    \"author\": \"Diego Araujo Ferreira de Melo\",\n    \"is_active\": false,\n    \"participants\": [\n        {\n            \"name\": \"Marcos Pereira\",\n            \"team\": \"ALL\"\n        },\n        {\n            \"name\": \"Alan Minusculi\",\n            \"team\": \"SALES\"\n        },\n        {\n            \"name\": \"Gabriel Tomazi\",\n            \"team\": \"MANAGEMENT\"\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/subjects",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"subjects"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LIST-ALL  PARTICIPANSTS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/participants?is_join=true&is_active=false",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"participants"
+					],
+					"query": [
+						{
+							"key": "is_join",
+							"value": "true"
+						},
+						{
+							"key": "is_active",
+							"value": "false"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
